@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			max-width: 100%;
+			max-height: 100vh;
+			display: grid;
+			align-items: center;
+			place-content:center;
+			margin: 0;
+
+		}
+		
+	</style>
+	<title>zombie</title>
+</head>
+<body>
+<canvas></canvas>
+</body>
+<script type="text/javascript">
+
+var canvas = document.querySelector('canvas');
+var c = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+	
+var images = [];
+images.length = 10;
+
+	
+for(var i = 1 ; i < images.length ; i++){
+    images[i] = new Image();
+    images[i].src = 'Walk (' + i.toString() + ').png';
+}
+	
+var i = 1;
+setInterval(function(){
+    i++;
+    if( i >= 10){
+        i = 1;
+    }
+    c.drawImage(images[i],900,100,500,500);
+},100)
+	
+
+
+
+
+
+</script>
+</html>
